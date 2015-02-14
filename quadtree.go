@@ -5,8 +5,8 @@ import (
 	"bytes"
 	"fmt"
 
-	"kasworld/goguelike/lib/ivector2d"
-	"kasworld/goguelike/lib/rect"
+	"github.com/kasworld/ivector2d"
+	"github.com/kasworld/rect"
 )
 
 const (
