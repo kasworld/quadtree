@@ -26,7 +26,7 @@ type QuadTree struct {
 	TerminalNode bool // cannot split
 }
 
-func NewQuadTree(rect rect.Rect) *QuadTree {
+func New(rect rect.Rect) *QuadTree {
 	rtn := QuadTree{
 		BoundRect: rect,
 		Center:    rect.Center(),
@@ -122,7 +122,7 @@ func (ot *QuadTree) split() {
 	// split all data and make datalist nil
 	for i, _ := range ot.Children {
 		newbound := ot.BoundRect.MakeRectBy4Driect(ot.Center, i)
-		ot.Children[i] = NewQuadTree(newbound)
+		ot.Children[i] = New(newbound)
 	}
 	// move this node data to child
 	newDataList := make([]QuadTreeObjI, 0, len(ot.DataList))
